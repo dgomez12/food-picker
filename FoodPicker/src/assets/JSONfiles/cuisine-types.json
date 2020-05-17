@@ -1,0 +1,50 @@
+[
+    {
+        "type": "Mexican",
+        "initialState": false
+    },
+    {
+        "type": "Indian",
+        "initialState": false
+    },
+    {
+        "type": "Chinese",
+        "initialState": false
+    },
+    {
+        "type": "Italian",
+        "initialState": false
+    },
+    {
+        "type": "Carribean",
+        "initialState": false
+    },
+    {
+        "type": "Japanese",
+        "initialState": false
+    },
+    {
+        "type": "Thai",
+        "initialState": false
+    },
+    {
+        "type": "Korean",
+        "initialState": false
+    },
+    {
+        "type": "Greek",
+        "initialState": false
+    },
+    {
+        "type": "Vietnamese",
+        "initialState": false
+    },
+    {
+        "type": "Cuban",
+        "initialState": false
+    },
+    {
+        "type": "Other",
+        "initialState": false
+    }
+]

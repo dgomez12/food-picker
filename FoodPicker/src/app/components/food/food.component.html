@@ -1,0 +1,24 @@
+<img class="img" src="../../../assets/images/food-background.jpg" alt="food-background">
+<div>
+    <h1>What are you in the mood for?</h1>
+    <p>Select your preference then select search</p>
+</div>
+
+<div class="container">
+    <ul class="ks-cboxtags">
+        <li *ngFor="let cuisine of cuisineList | async; let IndexOfElement=index;">
+            <input type="checkbox" id="checkbox{{IndexOfElement}}" value="{{cuisine.type}}">
+            <label for="checkbox{{IndexOfElement}}">{{cuisine.type}}</label>
+        </li>
+    </ul>
+</div>
+
+<!-- <div class="container">
+    <ul class="ks-cboxtags">
+        <li>
+            <input type="checkbox" id="checkboxOne" value="mexican">
+            <label for="checkboxOne">mexican</label>
+        </li>
+    </ul>
+</div> -->
+    
