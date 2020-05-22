@@ -1,0 +1,16 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.custom-slider {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.ng5-slider {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}  

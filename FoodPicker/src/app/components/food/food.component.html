@@ -1,24 +1,30 @@
 <img class="img" src="../../../assets/images/food-background.jpg" alt="food-background">
 <div>
     <h1>What are you in the mood for?</h1>
-    <p>Select your preference then select search</p>
+    <p>Select your preferences then select search</p>
 </div>
 
 <div class="container">
     <ul class="ks-cboxtags">
         <li *ngFor="let cuisine of cuisineList | async; let IndexOfElement=index;">
-            <input type="checkbox" id="checkbox{{IndexOfElement}}" value="{{cuisine.type}}">
+            <input type="checkbox" id="checkbox{{IndexOfElement}}" name="{{cuisine.type}}" value="{{IndexOfElement}}" (click)="checkBoxHandler($event)">
             <label for="checkbox{{IndexOfElement}}">{{cuisine.type}}</label>
         </li>
     </ul>
 </div>
 
-<!-- <div class="container">
-    <ul class="ks-cboxtags">
-        <li>
-            <input type="checkbox" id="checkboxOne" value="mexican">
-            <label for="checkboxOne">mexican</label>
+<app-price-slider></app-price-slider>
+
+<div class="search-btn">
+    <button type="submit" (click)="searchSubmit()">Search</button>
+</div>
+
+<!-- <div class="test">
+    <ul>
+        <li *ngFor="let preference of userPreferences | keyvalue">
+            {{preference.key}}:{{preference.value}}
         </li>
     </ul>
 </div> -->
+
     

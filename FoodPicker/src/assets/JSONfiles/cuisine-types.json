@@ -1,50 +1,38 @@
 [
     {
-        "type": "Mexican",
-        "initialState": false
+        "type": "Mexican"
     },
     {
-        "type": "Indian",
-        "initialState": false
+        "type": "Indian"
     },
     {
-        "type": "Chinese",
-        "initialState": false
+        "type": "Chinese"
     },
     {
-        "type": "Italian",
-        "initialState": false
+        "type": "Italian"
     },
     {
-        "type": "Carribean",
-        "initialState": false
+        "type": "Carribean"
     },
     {
-        "type": "Japanese",
-        "initialState": false
+        "type": "Japanese"
     },
     {
-        "type": "Thai",
-        "initialState": false
+        "type": "Thai"
     },
     {
-        "type": "Korean",
-        "initialState": false
+        "type": "Korean"
     },
     {
-        "type": "Greek",
-        "initialState": false
+        "type": "Greek"
     },
     {
-        "type": "Vietnamese",
-        "initialState": false
+        "type": "Vietnamese"
     },
     {
-        "type": "Cuban",
-        "initialState": false
+        "type": "Cuban"
     },
     {
-        "type": "Other",
-        "initialState": false
+        "type": "Other"
     }
 ]
