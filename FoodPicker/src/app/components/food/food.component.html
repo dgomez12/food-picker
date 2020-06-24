@@ -14,17 +14,20 @@
 </div>
 
 <app-price-slider></app-price-slider>
-
-<div class="search-btn">
-    <button type="submit" (click)="searchSubmit()">Search</button>
+<app-distance-slider></app-distance-slider>
+<!-- <div class="random">
+    <input type="checkbox" id="randomBtn">
+    <label for="randomBtn">Indecisive? pick a random restaurant from your preferences</label>
+</div> -->
+<div class="container">
+    <label class="random">Indecisive? pick a random restaurant from your preferences
+        <input type="checkbox" checked="checked" (change)="randomBtnHandler($event)">
+        <span class="checkmark"></span>
+      </label>
 </div>
 
-<!-- <div class="test">
-    <ul>
-        <li *ngFor="let preference of userPreferences | keyvalue">
-            {{preference.key}}:{{preference.value}}
-        </li>
-    </ul>
-</div> -->
+<div class="search-btn">
+    <button type="button" routerLink="/results">Search</button>
+</div>
 
     

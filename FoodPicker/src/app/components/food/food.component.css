@@ -21,13 +21,7 @@ img {
     }
   }
 
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    color: white;
-}
-
-p {
+* {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     color: white;
@@ -35,7 +29,6 @@ p {
 
 .container {
   max-width: 640px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 13px;
   margin: 0 auto;
 }
@@ -107,10 +100,86 @@ border: 2px solid #e9a1ff;
 .search-btn {
   max-width: 640px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 30px;
+  text-align: center;
 }
 
 .search-btn button {
   position: relative;
-  left: 45%;
+  background-color: #1CB2E9;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.search-btn button:hover{
+  border: solid;
+  border-color: white;
+}
+
+.random {
+  padding-top: 2em;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.random input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.random:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.random input:checked ~ .checkmark {
+  background-color: #1CB2E9;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.random input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.random .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

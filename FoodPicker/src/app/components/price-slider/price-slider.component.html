@@ -1,4 +1,4 @@
 <h1>Price Range</h1>
 <div class="custom-slider">
-    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (userChange)="updateValues()"></ng5-slider>
 </div>

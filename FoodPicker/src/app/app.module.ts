@@ -6,13 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { Ng5SliderModule } from 'ng5-slider';
-import { PriceSliderComponent } from './components/price-slider/price-slider.component';
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    PriceSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +19,9 @@ import { PriceSliderComponent } from './components/price-slider/price-slider.com
     HttpClientModule,
     FormsModule,
     Ng5SliderModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

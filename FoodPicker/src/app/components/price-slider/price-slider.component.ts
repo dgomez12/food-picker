@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Options } from 'ng5-slider';
+import { FoodSearchService } from '../../services/food-search.service';
 
 @Component({
   selector: 'app-price-slider',
@@ -8,7 +9,6 @@ import { Options } from 'ng5-slider';
 })
 export class PriceSliderComponent implements OnInit {
 
-  // iconMap: Map<number, string>;
   minValue: number = 1;
   maxValue: number = 4;
   options: Options = {
@@ -24,8 +24,16 @@ export class PriceSliderComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(
+    private foodService: FoodSearchService
+  ) { }
 
   ngOnInit(): void {}
+
+  updateValues(){
+    this.foodService.minPrice = this.minValue;
+    this.foodService.maxPrice = this.maxValue;
+    console.log(this.foodService.minPrice, this.foodService.maxPrice);
+  }
 
 }
