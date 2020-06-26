@@ -1,31 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Results } from '../interfaces/restaurant';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodSearchService {
 
-  options = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Headers' : 'Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version, X-File-Name',
-      'Access-Control-Request-Method' : 'GET,POST,OPTIONS'
-    })
-  };
-
-  lat: string = '';
-  lng: string = '';
+  lat: number;
+  lng: number;
   minPrice: number;
   maxPrice: number;
   distance: number;
-  isChecked: boolean;
   userPreferences: Map<number, string>;
+  isChecked: boolean;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
+
+  checkDisabled(){
+    if(this.userPreferences.size==0){
+      window.alert('Please pick an option before continuing');
+      return;
+    }else {
+      this.router.navigate(['/results']);
+    }
+  }
 
   reset(){
     this.minPrice = 1;
@@ -39,9 +42,12 @@ export class FoodSearchService {
   }
 
   getResults(cuisine: string){
-    return this.http.get<Results>(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.lat},${this.lng}&radius=${this.distance}&type=restaurant&minprice=${this.minPrice}&maxprice=${this.maxPrice}&keyword=${cuisine}&key=AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8`, this.options);
-  }
 
+    let params = new HttpParams().set("location", this.lat + ',' + this.lng).set("radius", this.distance.toString()).set("type", "restaurant").set("minprice", this.minPrice.toString()).set("maxprice", this.maxPrice.toString()).set("keyword", cuisine).set("key", "AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8");
+
+    return this.http.get<Results>('https://us-central1-restaurantpicker-30cc8.cloudfunctions.net/foodApi', {params: params});
+  }
+  
   // getNextPage(token: string){
   //   return this.http.get<Results>(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=${token}&key=AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8`);
   // }

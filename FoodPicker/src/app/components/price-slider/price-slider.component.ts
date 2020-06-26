@@ -17,10 +17,10 @@ export class PriceSliderComponent implements OnInit {
     step: 1,
     showTicks: true,
     stepsArray: [
-      {value: 1, legend: 'Inexpensive'},
-      {value: 2, legend: 'Moderate'},
-      {value: 3, legend: 'Expensive'},
-      {value: 4, legend: 'Very Expensive'}
+      {value: 1, legend: '$'},
+      {value: 2, legend: '$$'},
+      {value: 3, legend: '$$$'},
+      {value: 4, legend: '$$$$'}
     ]
   };
 

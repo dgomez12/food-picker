@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonDataService } from 'src/app/services/json-data.service';
 import { FoodSearchService } from '../../services/food-search.service';
-import { UserLocationService } from 'src/app/services/user-location.service';
 
 @Component({
   selector: 'app-food',
@@ -15,26 +14,20 @@ export class FoodComponent implements OnInit {
   constructor(
     private jsonDataService: JsonDataService,
     private foodService: FoodSearchService,
-    private locationService: UserLocationService,
   ) { }
 
   ngOnInit(): void {
     this.foodService.reset();
-    // navigator.geolocation.getCurrentPosition((position) => {
-    //   this.foodService.userLatitude = position.coords.latitude;
-    //   this.foodService.userLatitude = position.coords.longitude;
-    //   console.log(position);
-    // },
-    // function(error) {
-    //   if (error.code == error.PERMISSION_DENIED){
-    //     alert(error.message);
-    //   }
-    // });
-    this.locationService.getUserLocation().subscribe((data) => {
-      this.foodService.lat = data.latitude;
-      this.foodService.lng = data.longitude;
-      console.log(data, data.latitude, data.longitude);
-    })
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.foodService.lat = position.coords.latitude;
+      this.foodService.lng = position.coords.longitude;
+      console.log(position);
+    },
+    function(error) {
+      if (error.code == error.PERMISSION_DENIED){
+        alert(error.message);
+      }
+    });
     this.cuisineList = this.jsonDataService.getCuisineTypes();
   }
 
@@ -49,6 +42,10 @@ export class FoodComponent implements OnInit {
   randomBtnHandler(event: any){
     this.foodService.isChecked = event.target.checked;
     console.log(this.foodService.isChecked);
+  }
+
+  submit(){
+    this.foodService.checkDisabled();
   }
 
 }

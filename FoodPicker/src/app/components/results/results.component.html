@@ -13,26 +13,9 @@
                 <div class="rating">Rating: {{r.rating}}</div>
                 <div class="price-level">Price level: {{r.price_level}}</div>
                 <div class="directions">
-                    <a href="https://www.google.com/maps/dir//{{r.name}},{{r.vicinity}}" target="_blank">Get directions</a>
+                    <a href="https://www.google.com/maps/dir/{{lat}},{{lng}}/{{r.name}},{{r.vicinity}}" target="_blank">Get directions</a>
                 </div>
             </div>
         </agm-info-window>
     </agm-marker>
-    <!-- <agm-marker *ngFor="let r of nextPageResults;" [latitude]="r.geometry.location.lat" [longitude]="r.geometry.location.lng">
-        <agm-info-window>
-            <div class="name">
-                <h1>{{r.name}}</h1>
-            </div>
-            <div class="address">
-                <p>{{r.vicinity}}</p>
-            </div>
-            <div class="info-window-stats">
-                <div class="rating">Rating: {{r.rating}}</div>
-                <div class="price-level">Price level: {{r.price_level}}</div>
-                <div class="directions">
-                    <a href="https://www.google.com/maps/dir//{{r.name}},{{r.vicinity}}" target="_blank">Get directions</a>
-                </div>
-            </div>
-        </agm-info-window>
-    </agm-marker> -->
 </agm-map>

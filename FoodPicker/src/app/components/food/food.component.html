@@ -15,10 +15,6 @@
 
 <app-price-slider></app-price-slider>
 <app-distance-slider></app-distance-slider>
-<!-- <div class="random">
-    <input type="checkbox" id="randomBtn">
-    <label for="randomBtn">Indecisive? pick a random restaurant from your preferences</label>
-</div> -->
 <div class="container">
     <label class="random">Indecisive? pick a random restaurant from your preferences
         <input type="checkbox" checked="checked" (change)="randomBtnHandler($event)">
@@ -27,7 +23,7 @@
 </div>
 
 <div class="search-btn">
-    <button type="button" routerLink="/results">Search</button>
+    <button type="button" (click)="submit()">Search</button>
 </div>
 
     

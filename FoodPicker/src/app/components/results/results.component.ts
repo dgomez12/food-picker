@@ -9,8 +9,8 @@ import { Restaurant } from 'src/app/interfaces/restaurant';
 })
 export class ResultsComponent implements OnInit {
 
-  lat: string = '';
-  lng: string = '';
+  lat: number;
+  lng: number;
   zoom: number;
   randomNumber: number = 0;
   restaurantResults: Restaurant[];
@@ -38,24 +38,5 @@ export class ResultsComponent implements OnInit {
       })
     })
   }
-
-  // ngOnInit(): void {
-  //   this.foodService.getResults().subscribe(data =>{
-  //     if(data.hasOwnProperty('next_page_token')){
-  //       setTimeout(() => {
-  //         console.log(data.next_page_token);
-  //         this.foodService.getNextPage(data.next_page_token).subscribe(data => {
-  //           this.nextPageResults = data.results;
-  //           console.log(data);
-  //         });
-  //       }, 15000);
-  //     }
-  //     this.restaurantResults = data.results;
-  //     console.log(data);
-  //     this.lat = this.foodService.userLatitude;
-  //     this.lng = this.foodService.userLongitude;
-  //     this.zoom = 13;
-  //   });
-  // }
 
 }
