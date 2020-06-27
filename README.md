@@ -1,6 +1,6 @@
 # Food Picker
 Web application that helps you decide where to eat or allows you to explore multiple options.
-Perfect for indecisive girlfriends.
+Perfect for indecisive girlfriends. Try it out at https://foodpicker.net :fork_and_knife:
 
 # Technologies used
 - VSCode
