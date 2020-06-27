@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonDataService } from 'src/app/services/json-data.service';
 import { FoodSearchService } from '../../services/food-search.service';
+import { UserLocationService } from 'src/app/services/user-location.service';
 
 @Component({
   selector: 'app-food',
@@ -14,6 +15,7 @@ export class FoodComponent implements OnInit {
   constructor(
     private jsonDataService: JsonDataService,
     private foodService: FoodSearchService,
+    private locationService: UserLocationService //FOR LOCAL TESTING
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,10 @@ export class FoodComponent implements OnInit {
         alert(error.message);
       }
     });
+    // this.locationService.getUserLocation().subscribe((data) => {    <--FOR LOCAL TESTING
+    //   this.foodService.lat = data.latitude;
+    //   this.foodService.lng = data.longitude;
+    // })
     this.cuisineList = this.jsonDataService.getCuisineTypes();
   }
 

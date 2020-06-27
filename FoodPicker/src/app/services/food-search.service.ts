@@ -31,6 +31,7 @@ export class FoodSearchService {
   }
 
   reset(){
+    this.isChecked = true;
     this.minPrice = 1;
     this.maxPrice = 4;
     this.distance = 8046.7;
@@ -43,7 +44,7 @@ export class FoodSearchService {
 
   getResults(cuisine: string){
 
-    let params = new HttpParams().set("location", this.lat + ',' + this.lng).set("radius", this.distance.toString()).set("type", "restaurant").set("minprice", this.minPrice.toString()).set("maxprice", this.maxPrice.toString()).set("keyword", cuisine).set("key", "AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8");
+    let params = new HttpParams().set("location", this.lat + ',' + this.lng).set("radius", this.distance.toString()).set("type", "restaurant").set("minprice", this.minPrice.toString()).set("maxprice", this.maxPrice.toString()).set("keyword", cuisine).set("key", "API_KEY");
 
     return this.http.get<Results>('https://us-central1-restaurantpicker-30cc8.cloudfunctions.net/foodApi', {params: params});
   }

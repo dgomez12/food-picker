@@ -12,8 +12,10 @@ export class ResultsComponent implements OnInit {
   lat: number;
   lng: number;
   zoom: number;
-  randomNumber: number = 0;
+  randomNumber: number;
   restaurantResults: Restaurant[];
+  randomChecker: boolean;
+  resultLength: number;
   // nextPageResults: Restaurant[];
 
   constructor(
@@ -25,16 +27,17 @@ export class ResultsComponent implements OnInit {
     this.lat = this.foodService.lat;
     this.lng = this.foodService.lng;
     this.zoom = 13;
+    this.randomChecker = this.foodService.isChecked;
+    this.handleResults();
+  }
+  
+  handleResults(){
     this.foodService.userPreferences.forEach((value: string) => {
       this.foodService.getResults(value).subscribe((data) => {
-        console.log(data);
         data.results.forEach((r) => {
           this.restaurantResults.push(r);
-          console.log(r);
         })
-        if(this.foodService.isChecked = true){
-          this.randomNumber = this.foodService.getRandomInt(this.restaurantResults.length);
-         }
+        this.randomNumber = this.foodService.getRandomInt(this.restaurantResults.length);
       })
     })
   }

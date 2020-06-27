@@ -20,7 +20,7 @@ import { AgmCoreModule } from "@agm/core";
     FormsModule,
     Ng5SliderModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8'
+      apiKey: 'API_KEY'
     })
   ],
   providers: [],
