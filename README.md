@@ -16,4 +16,5 @@ Perfect for indecisive girlfriends. Try it out at https://foodpicker.net :fork_a
 - Became more familiar with status codes
 - Set up google map and use markers
 
+# Demo
 ![Demo](demo/FoodPickerGif.gif)
