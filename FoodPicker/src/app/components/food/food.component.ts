@@ -30,7 +30,7 @@ export class FoodComponent implements OnInit {
         alert(error.message);
       }
     });
-    // this.locationService.getUserLocation().subscribe((data) => {    <--FOR LOCAL TESTING
+    // this.locationService.getUserLocation().subscribe((data) => { <--FOR LOCAL TESTING
     //   this.foodService.lat = data.latitude;
     //   this.foodService.lng = data.longitude;
     // })

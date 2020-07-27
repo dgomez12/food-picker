@@ -42,4 +42,8 @@ export class ResultsComponent implements OnInit {
     })
   }
 
+  reroll(){
+    this.randomNumber = this.foodService.getRandomInt(this.restaurantResults.length);
+  }
+
 }

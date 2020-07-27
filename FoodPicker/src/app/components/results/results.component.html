@@ -1,4 +1,7 @@
-<h1 *ngIf="randomChecker == true">Your randomly picked restaurant is #{{randomNumber}}</h1>
+<div class="reroll-btn">
+    <h1>Your randomly picked restaurant is # <span>{{randomNumber}}</span></h1>
+    <button type="button" (click)="reroll()">Reroll</button>
+</div>
 <agm-map class="full-page" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <agm-marker [latitude]="lat" [longitude]="lng" label="YOU"></agm-marker>
     <agm-marker *ngFor="let r of restaurantResults; let i = index;" label="{{i}}" [latitude]="r.geometry.location.lat" [longitude]="r.geometry.location.lng">

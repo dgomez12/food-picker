@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Results } from '../interfaces/restaurant';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -44,12 +45,8 @@ export class FoodSearchService {
 
   getResults(cuisine: string){
 
-    let params = new HttpParams().set("location", this.lat + ',' + this.lng).set("radius", this.distance.toString()).set("type", "restaurant").set("minprice", this.minPrice.toString()).set("maxprice", this.maxPrice.toString()).set("keyword", cuisine).set("key", "AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8");
+    let params = new HttpParams().set("location", this.lat + ',' + this.lng).set("radius", this.distance.toString()).set("type", "restaurant").set("minprice", this.minPrice.toString()).set("maxprice", this.maxPrice.toString()).set("keyword", cuisine).set("key", environment.API_KEY);
 
     return this.http.get<Results>('https://us-central1-restaurantpicker-30cc8.cloudfunctions.net/foodApi', {params: params});
   }
-  
-  // getNextPage(token: string){
-  //   return this.http.get<Results>(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=${token}&key=AIzaSyAogGBcYoTwgNYi014nNU7z19z4SipigC8`);
-  // }
 }
